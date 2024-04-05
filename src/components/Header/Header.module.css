@@ -1,0 +1,27 @@
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 16px 0;
+	box-shadow: 0 4px 4px var(--color-shadow25);
+}
+.header .container {
+	display: flex;
+	justify-content: space-between;
+	width: clamp(252px, 90%, 1440px);
+	text-shadow: 0 4px 4px var(--color-shadow25);
+	margin: 0 16px;
+}
+.header .logo {
+	color: var(--color-yellow);
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.header .links {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 1.1rem;
+	font-weight: 300;
+}
