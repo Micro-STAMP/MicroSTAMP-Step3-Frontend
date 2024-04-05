@@ -19,6 +19,7 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	--color-yellow: #d4a056;
+	--color-gray: #4a4c5c;
 	--color-background: #333c4b;
 	--color-white: #f5f5f5;
 	--color-shadow25: #16161640;
@@ -51,9 +52,20 @@ li {
 
 /* - - - - - - - - - - - - - - - - - - - - - - */
 
+html {
+	font-size: 62.5%;
+}
 body {
 	background-color: var(--color-background);
 	color: var(--color-white);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+@media (max-width: 425px) {
+	html {
+		font-size: 50%;
+	}
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - */

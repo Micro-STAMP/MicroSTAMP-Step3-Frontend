@@ -1,10 +1,9 @@
-import Header from "@components/Header";
+import AppRoutes from "@/routes";
 
 function App() {
 	return (
 		<>
-			<Header />
-			conteudo
+			<AppRoutes />
 		</>
 	);
 }
