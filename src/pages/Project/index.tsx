@@ -1,9 +1,16 @@
-import PageDisplay from "@/components/PageDisplay";
+import EntityContainer from "@/components/EntityContainer";
+import TitleDisplay from "@components/TitleDisplay";
 
 function Project() {
 	return (
 		<>
-			<PageDisplay controlAction="Pump Insulin" controller="Insulin Pump" />
+			<TitleDisplay controller="Insulin Pump" project="Insulin Pump" />
+			<EntityContainer title="Project" justTitle>
+				<></>
+			</EntityContainer>
+			<EntityContainer title="Controller">
+				<></>
+			</EntityContainer>
 		</>
 	);
 }

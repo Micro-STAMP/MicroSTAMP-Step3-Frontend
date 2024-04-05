@@ -4,6 +4,6 @@
 	justify-content: center;
 	align-items: center;
 	gap: 36px;
-	width: clamp(252px, 90%, 1440px);
+	width: var(--full-content-size);
 	margin: 54px auto;
 }
