@@ -1,0 +1,33 @@
+.card {
+	background-color: var(--color-gray);
+	border-radius: 30px;
+	box-shadow: var(--shadow25);
+	width: clamp(200px, 100%, 300px);
+
+	a {
+		width: 100%;
+	}
+
+	.name {
+		font-size: 2rem;
+		font-weight: 600;
+		text-align: center;
+		padding: 12px;
+	}
+
+	.image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 5rem;
+		background-color: var(--color-yellow);
+		height: 140px;
+	}
+
+	.description {
+		font-size: 1.7rem;
+		font-weight: 300;
+		padding: 24px 12px;
+		text-align: center;
+	}
+}

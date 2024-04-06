@@ -15,7 +15,9 @@
 	}
 
 	.logo {
-		color: var(--color-yellow);
+		a {
+			color: var(--color-yellow);
+		}
 		font-size: 2.4rem;
 		font-weight: bold;
 	}

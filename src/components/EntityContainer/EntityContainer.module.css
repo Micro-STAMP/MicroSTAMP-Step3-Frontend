@@ -4,7 +4,7 @@
 	width: 100%;
 	border: var(--border3);
 	border-radius: 30px;
-	min-height: 150px;
+	min-height: 140px;
 
 	header {
 		display: flex;
@@ -41,7 +41,6 @@
 	}
 
 	.content {
-		margin-top: 12px;
-		padding: 12px 24px;
+		padding: 18px 24px;
 	}
 }

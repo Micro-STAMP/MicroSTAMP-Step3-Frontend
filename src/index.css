@@ -46,6 +46,7 @@
 }
 a {
 	text-decoration: none;
+	color: var(--color-white);
 }
 input,
 button {
@@ -66,10 +67,21 @@ li {
 
 html {
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 body {
 	background-color: var(--color-background);
 	color: var(--color-white);
+}
+::selection {
+	background-color: #b4894d;
+	color: var(--color-white);
+}
+::-webkit-scrollbar {
+	width: 3px;
+}
+::-webkit-scrollbar-thumb {
+	background: #b4894d;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - */
