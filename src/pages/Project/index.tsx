@@ -1,4 +1,5 @@
-import EntityContainer from "@/components/EntityContainer";
+import Button from "@components/Button";
+import EntityContainer from "@components/EntityContainer";
 
 function Project() {
 	return (
@@ -8,6 +9,12 @@ function Project() {
 			</EntityContainer>
 			<EntityContainer title="Controllers"> controllers </EntityContainer>
 			<EntityContainer title="Hazards"> hazards </EntityContainer>
+			<>
+				<Button onClick={() => console.log()}>Export Project</Button>
+				<Button variant="secondary" onClick={() => console.log()}>
+					Remove Project
+				</Button>
+			</>
 		</>
 	);
 }
