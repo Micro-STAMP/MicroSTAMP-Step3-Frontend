@@ -1,0 +1,22 @@
+[
+	{
+		"id": "1",
+		"name": "Train Door System",
+		"description": "The train door system is  responsible for the opening and closing of the carriage doors."
+	},
+	{
+		"id": "2",
+		"name": "Insulin Pump",
+		"description": "The Insulin Pump System is a medical device designed to administer insulin."
+	},
+	{
+		"id": "3",
+		"name": "UATM",
+		"description": "UATM is a system under development to manage urban air vehicle traffic."
+	},
+	{
+		"id": "4",
+		"name": "Nuclear Power Plant",
+		"description": "A nuclear power plant harnesses the energy from splitting uranium atoms to generate electricity safely and efficiently."
+	}
+]
