@@ -1,0 +1,31 @@
+.projectContainer {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		gap: 36px;
+		font-size: 1.8rem;
+		font-weight: 300;
+		width: 100%;
+
+		.name,
+		.description {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			strong {
+				font-weight: 600;
+			}
+
+			div {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+}
