@@ -6,7 +6,7 @@ interface ButtonProps {
 	children: ReactNode;
 	type?: "submit" | "reset" | "button" | undefined;
 	variant?: ButtonVariant;
-	onClick: () => void;
+	onClick?: () => void;
 }
 function Button({ onClick, children, variant = "primary", type = "button" }: ButtonProps) {
 	const buttonVariant = `${styles.button} ${styles[variant]}`;

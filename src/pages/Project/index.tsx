@@ -1,5 +1,9 @@
 import EntityContainer from "@components/EntityContainer";
-import { EditButton } from "@components/IconButton";
+import { EditButton, EditDeleteButton } from "@components/IconButton";
+import { BiLink as LinkIcon } from "react-icons/bi";
+
+import Button from "@/components/Button";
+import { Link } from "react-router-dom";
 import styles from "./Project.module.css";
 
 function Project() {
@@ -26,8 +30,29 @@ function Project() {
 					</div>
 				</div>
 			</EntityContainer>
-			<EntityContainer title="Controllers"> controllers </EntityContainer>
-			<EntityContainer title="Hazards"> hazards </EntityContainer>
+			<EntityContainer title="Controllers">
+				<div className={styles.controllersContainer}>
+					<div className={styles.controller}>
+						<Link to="/controller/1">
+							<span>
+								Insulin Pump <LinkIcon className={styles.icon} />
+							</span>
+						</Link>
+						<EditDeleteButton onDelete={() => {}} onEdit={() => {}} />
+					</div>
+				</div>
+			</EntityContainer>
+			<EntityContainer title="Hazards">
+				<div className={styles.hazardsContainer}>
+					<div className={styles.hazard}>
+						<span>Pumping insulin when glucose level is going down - hypoglycemia</span>
+						<EditDeleteButton onDelete={() => {}} onEdit={() => {}} />
+					</div>
+				</div>
+			</EntityContainer>
+
+			<Button> Export Project</Button>
+			<Button variant="secondary">Remove Project</Button>
 		</>
 	);
 }
