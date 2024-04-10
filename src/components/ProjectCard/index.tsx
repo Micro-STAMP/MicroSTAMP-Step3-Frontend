@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import styles from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
-	id: string;
+	slug: string;
 	name: string;
 	description: string;
 }
-function ProjectCard({ id, name, description }: ProjectCardProps) {
+function ProjectCard({ slug, name, description }: ProjectCardProps) {
 	return (
 		<div className={styles.card}>
-			<Link to={`/project/${id}`}>
+			<Link to={`/project/${slug}`}>
 				<div className={styles.name}>{name}</div>
 				<div className={styles.image}>
 					<ImageIcon />

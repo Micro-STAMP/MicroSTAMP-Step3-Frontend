@@ -1,0 +1,26 @@
+[
+	{
+		"id": "1",
+		"name": "Pumping insulin when glucose level is going down - hypoglycemia"
+	},
+	{
+		"id": "2",
+		"name": "Not pumping insulin when glucose level is going up - hyperglycemia"
+	},
+	{
+		"id": "3",
+		"name": "System in operation with battery or reservoir level below recommended values."
+	},
+	{
+		"id": "4",
+		"name": "Disclosure sensitive information (exposure of patient data)."
+	},
+	{
+		"id": "5",
+		"name": "Reservoir filled with not recommended insulin or another product."
+	},
+	{
+		"id": "6",
+		"name": "Mobile device not paired with insulin pump."
+	}
+]

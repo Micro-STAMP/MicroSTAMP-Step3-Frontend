@@ -1,11 +1,9 @@
-import { IProject } from "@/interfaces/IProjects";
-import projectsJson from "@/json/projects.json";
+import { projects } from "@/json";
 import EntityContainer from "@components/EntityContainer";
 import ProjectCard from "@components/ProjectCard";
 import styles from "./Projects.module.css";
 
 function Projects() {
-	const projects = projectsJson as IProject[];
 	return (
 		<>
 			<EntityContainer title="Projects">

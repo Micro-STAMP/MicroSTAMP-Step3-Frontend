@@ -1,0 +1,14 @@
+[
+	{
+		"id": "1",
+		"name": "Insulin Pump",
+		"slug": "insulin-pump",
+		"control_actions": [
+			{
+				"id": "1",
+				"name": "Pump Insulin",
+				"slug": "pump-insulin"
+			}
+		]
+	}
+]

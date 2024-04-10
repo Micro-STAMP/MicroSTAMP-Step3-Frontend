@@ -1,5 +1,11 @@
 import Button from "@/components/Button";
-import { AddButton, DeleteButton, EditButton, EditDeleteButton } from "@/components/IconButton";
+import {
+	AddButton,
+	DeleteButton,
+	EditButton,
+	EditDeleteButton,
+	LinkButton
+} from "@components/IconButton";
 
 function Home() {
 	return (
@@ -8,16 +14,15 @@ function Home() {
 
 			{/* Testes de componentes:  */}
 			<>
-				<EditButton onClick={() => console.log("")} />
-				<DeleteButton onClick={() => console.log("")} />
-				<AddButton onClick={() => console.log("")} />
-				<EditDeleteButton onEdit={() => console.log("")} onDelete={() => console.log("")} />
+				<EditButton onClick={() => {}} />
+				<DeleteButton onClick={() => {}} />
+				<AddButton onClick={() => {}} />
+				<LinkButton to="/" />
+				<EditDeleteButton onEdit={() => {}} onDelete={() => {}} />
 			</>
 			<>
-				<Button onClick={() => console.log()}>Export Project</Button>
-				<Button variant="secondary" onClick={() => console.log()}>
-					Remove Project
-				</Button>
+				<Button>Export Project</Button>
+				<Button variant="secondary">Remove Project</Button>
 			</>
 		</>
 	);
