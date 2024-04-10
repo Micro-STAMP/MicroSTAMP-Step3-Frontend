@@ -1,7 +1,7 @@
+import { EntityItem as Controller } from "@/components/EntityItem";
 import { IController } from "@/interfaces/IController";
-import { Container } from "@components/EntityContainer";
+import { Container, ListWrapper } from "@components/EntityContainer";
 import { EditDeleteButton, LinkButton } from "@components/IconButton";
-import styles from "./ControllersContainer.module.css";
 
 interface ControllersContainerProps {
 	controllers: IController[];
@@ -9,17 +9,17 @@ interface ControllersContainerProps {
 function ControllersContainer({ controllers }: ControllersContainerProps) {
 	return (
 		<Container title="Controllers">
-			<div className={styles.controllersContainer}>
+			<ListWrapper>
 				{controllers.map(controller => (
-					<div className={styles.controller} key={controller.id}>
-						<span>{controller.name}</span>
-						<div className={styles.actions}>
+					<Controller.Root key={controller.id}>
+						<Controller.Name>{controller.name}</Controller.Name>
+						<Controller.Actions>
 							<LinkButton to={`/controller/${controller.slug}`} />
 							<EditDeleteButton onDelete={() => {}} onEdit={() => {}} />
-						</div>
-					</div>
+						</Controller.Actions>
+					</Controller.Root>
 				))}
-			</div>
+			</ListWrapper>
 		</Container>
 	);
 }

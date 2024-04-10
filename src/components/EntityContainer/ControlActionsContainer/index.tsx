@@ -1,28 +1,26 @@
 import { IControlAction } from "@/interfaces/IControlAction";
-import { Container } from "@components/EntityContainer";
+import { Container, ListWrapper } from "@components/EntityContainer";
+import { EntityItem as ControlAction } from "@components/EntityItem";
 import { EditDeleteButton, LinkButton } from "@components/IconButton";
-import styles from "./ControlActionsContainer.module.css";
 
 interface ControlActionsContainerProps {
 	controlActions: IControlAction[];
 }
 function ControlActionsContainer({ controlActions }: ControlActionsContainerProps) {
 	return (
-		<>
-			<Container title="Control Actions">
-				<div className={styles.controlActionsContainer}>
-					{controlActions.map(ca => (
-						<div className={styles.controlAction} key={ca.id}>
-							<span>{ca.name}</span>
-							<div className={styles.actions}>
-								<LinkButton to={`/control-action/${ca.slug}`} />
-								<EditDeleteButton onDelete={() => {}} onEdit={() => {}} />
-							</div>
-						</div>
-					))}
-				</div>
-			</Container>
-		</>
+		<Container title="Control Actions">
+			<ListWrapper>
+				{controlActions.map(ca => (
+					<ControlAction.Root key={ca.id}>
+						<ControlAction.Name>{ca.name}</ControlAction.Name>
+						<ControlAction.Actions>
+							<LinkButton to={`/control-action/${ca.slug}`} />
+							<EditDeleteButton onDelete={() => {}} onEdit={() => {}} />
+						</ControlAction.Actions>
+					</ControlAction.Root>
+				))}
+			</ListWrapper>
+		</Container>
 	);
 }
 

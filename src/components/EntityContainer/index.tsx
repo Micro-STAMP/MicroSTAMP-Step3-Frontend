@@ -1,4 +1,6 @@
+import ListWrapper from "@/components/EntityContainer/Container/ListWrapper";
 import Container from "@components/EntityContainer/Container";
+
 import ControlActionsContainer from "@components/EntityContainer/ControlActionsContainer";
 import ControllersContainer from "@components/EntityContainer/ControllersContainer";
 import HazardsContainer from "@components/EntityContainer/HazardsContainer";
@@ -11,6 +13,7 @@ export {
 	ControlActionsContainer,
 	ControllersContainer,
 	HazardsContainer,
+	ListWrapper,
 	ProjectContainer,
 	ProjectsContainer,
 	VariablesContainer

@@ -1,9 +1,7 @@
-import { Container } from "@/components/EntityContainer";
 import { IVariable } from "@/interfaces/IVariable";
+import { Container, ListWrapper } from "@components/EntityContainer";
+import { EntityItem as Variable } from "@components/EntityItem";
 import { AddButton, EditDeleteButton } from "@components/IconButton";
-import { BiX as X } from "react-icons/bi";
-
-import styles from "./VariablesContainer.module.css";
 
 interface VariableContainerProps {
 	variables: IVariable[];
@@ -11,29 +9,20 @@ interface VariableContainerProps {
 function VariableContainer({ variables }: VariableContainerProps) {
 	return (
 		<Container title="Variables">
-			<div className={styles.variablesContainer}>
+			<ListWrapper>
 				{variables.map(variable => (
-					<div className={styles.variable} key={variable.id}>
-						<div className={styles.details}>
-							<span className={styles.varName}>{variable.name}</span>
-							<div className={styles.values}>
-								{variable.values.map(value => (
-									<div className={styles.value} key={value.id}>
-										<button type="button">
-											<X />
-										</button>
-										<span>{value.name}</span>
-									</div>
-								))}
-							</div>
-						</div>
-						<div className={styles.actions}>
+					<Variable.Root key={variable.id}>
+						<Variable.Display>
+							<Variable.Name>{variable.name}</Variable.Name>
+							<Variable.Values values={variable.values} />
+						</Variable.Display>
+						<Variable.Actions>
 							<AddButton onClick={() => {}} />
 							<EditDeleteButton onEdit={() => {}} onDelete={() => {}} />
-						</div>
-					</div>
+						</Variable.Actions>
+					</Variable.Root>
 				))}
-			</div>
+			</ListWrapper>
 		</Container>
 	);
 }

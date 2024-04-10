@@ -1,0 +1,22 @@
+.entityItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	width: 100%;
+	background-color: var(--color-gray25);
+	padding: 8px 12px;
+	border-radius: 20px;
+
+	.name {
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+
+	.actions {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+	}
+}

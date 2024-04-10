@@ -13,14 +13,14 @@ function ProjectContainer({ name, description }: ProjectContainerProps) {
 		<Container title="Project" justTitle>
 			<div className={styles.projectContainer}>
 				<div className={styles.name}>
-					<div>
+					<div className={styles.text}>
 						<strong>Name: </strong>
 						<span>{name}</span>
 					</div>
 					<EditButton onClick={() => {}} />
 				</div>
 				<div className={styles.description}>
-					<div>
+					<div className={styles.text}>
 						<strong>Description: </strong>
 						<span>{description}</span>
 					</div>

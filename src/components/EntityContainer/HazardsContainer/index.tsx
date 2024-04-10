@@ -1,6 +1,6 @@
-import { Container } from "@components/EntityContainer";
+import { Container, ListWrapper } from "@components/EntityContainer";
+import { EntityItem as Hazard } from "@components/EntityItem";
 import { EditDeleteButton } from "@components/IconButton";
-import styles from "./HazardsContainer.module.css";
 
 interface HazardsContainerProps {
 	hazards: IHazard[];
@@ -8,14 +8,14 @@ interface HazardsContainerProps {
 function HazardsContainer({ hazards }: HazardsContainerProps) {
 	return (
 		<Container title="Hazards">
-			<div className={styles.hazardsContainer}>
+			<ListWrapper>
 				{hazards.map(hazard => (
-					<div className={styles.hazard} key={hazard.id}>
-						<span>{hazard.name}</span>
+					<Hazard.Root key={hazard.id}>
+						<Hazard.Name>{hazard.name}</Hazard.Name>
 						<EditDeleteButton onDelete={() => {}} onEdit={() => {}} />
-					</div>
+					</Hazard.Root>
 				))}
-			</div>
+			</ListWrapper>
 		</Container>
 	);
 }

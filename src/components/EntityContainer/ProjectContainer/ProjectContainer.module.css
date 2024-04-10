@@ -11,19 +11,18 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 12px;
-		width: 100%;
 
 		/* TODO: Perguntar sobre colocar ou não  */
 		/* background-color: var(--color-gray25);
 		padding: 8px 12px;
 		border-radius: 20px; */
 
-		div {
+		.text {
 			display: flex;
 			flex-direction: column;
 
 			strong {
-				font-weight: 600;
+				font-weight: 500;
 			}
 		}
 	}
