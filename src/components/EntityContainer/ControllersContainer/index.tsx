@@ -1,5 +1,5 @@
 import { IController } from "@/interfaces/IController";
-import EntityContainer from "@components/EntityContainer";
+import { Container } from "@components/EntityContainer";
 import { EditDeleteButton, LinkButton } from "@components/IconButton";
 import styles from "./ControllersContainer.module.css";
 
@@ -8,7 +8,7 @@ interface ControllersContainerProps {
 }
 function ControllersContainer({ controllers }: ControllersContainerProps) {
 	return (
-		<EntityContainer title="Controllers">
+		<Container title="Controllers">
 			<div className={styles.controllersContainer}>
 				{controllers.map(controller => (
 					<div className={styles.controller} key={controller.id}>
@@ -20,7 +20,7 @@ function ControllersContainer({ controllers }: ControllersContainerProps) {
 					</div>
 				))}
 			</div>
-		</EntityContainer>
+		</Container>
 	);
 }
 

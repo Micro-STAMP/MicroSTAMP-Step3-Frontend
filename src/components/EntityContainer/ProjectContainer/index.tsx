@@ -1,4 +1,4 @@
-import EntityContainer from "@components/EntityContainer";
+import { Container } from "@components/EntityContainer";
 import { EditButton } from "@components/IconButton";
 import styles from "./ProjectContainer.module.css";
 
@@ -10,7 +10,7 @@ interface ProjectContainerProps {
 }
 function ProjectContainer({ name, description }: ProjectContainerProps) {
 	return (
-		<EntityContainer title="Project" justTitle>
+		<Container title="Project" justTitle>
 			<div className={styles.projectContainer}>
 				<div className={styles.name}>
 					<div>
@@ -27,7 +27,7 @@ function ProjectContainer({ name, description }: ProjectContainerProps) {
 					<EditButton onClick={() => {}} />
 				</div>
 			</div>
-		</EntityContainer>
+		</Container>
 	);
 }
 

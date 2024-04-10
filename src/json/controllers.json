@@ -9,6 +9,68 @@
 				"name": "Pump Insulin",
 				"slug": "pump-insulin"
 			}
+		],
+		"variables": [
+			{
+				"id": "1",
+				"name": "Reservoir Level",
+				"values": [
+					{
+						"id": "1",
+						"name": "Below"
+					},
+					{
+						"id": "2",
+						"name": "Normal"
+					}
+				]
+			},
+			{
+				"id": "2",
+				"name": "Battery Level",
+				"values": [
+					{
+						"id": "3",
+						"name": "Below"
+					},
+					{
+						"id": "4",
+						"name": "Normal"
+					}
+				]
+			},
+			{
+				"id": "3",
+				"name": "Pump operational status",
+				"values": [
+					{
+						"id": "5",
+						"name": "Transmitting"
+					},
+					{
+						"id": "6",
+						"name": "Not Transmitting"
+					}
+				]
+			},
+			{
+				"id": "4",
+				"name": "Basal rate",
+				"values": [
+					{
+						"id": "7",
+						"name": "Below"
+					},
+					{
+						"id": "8",
+						"name": "Normal"
+					},
+					{
+						"id": "9",
+						"name": "Above"
+					}
+				]
+			}
 		]
 	}
 ]

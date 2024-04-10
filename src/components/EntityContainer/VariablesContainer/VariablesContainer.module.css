@@ -1,0 +1,61 @@
+.variablesContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	font-size: 1.8rem;
+	font-weight: 300;
+
+	.variable {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 12px;
+		width: 100%;
+		background-color: var(--color-gray25);
+		padding: 8px 12px;
+		border-radius: 20px;
+
+		.details {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 12px;
+
+			.varName {
+				font-size: 1.6rem;
+				font-weight: 400;
+			}
+
+			.values {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				font-size: 1.4rem;
+
+				.value {
+					display: flex;
+					align-items: center;
+					gap: 2px;
+					background-color: var(--color-dark);
+					padding: 4px 8px;
+					border-radius: 8px;
+
+					button {
+						display: flex;
+						align-items: center;
+						background: none;
+						font-size: 1.6rem;
+						color: var(--color-yellow);
+					}
+				}
+			}
+		}
+
+		.actions {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+		}
+	}
+}

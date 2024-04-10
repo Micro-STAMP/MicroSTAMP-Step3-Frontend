@@ -1,4 +1,4 @@
-import EntityContainer from "@components/EntityContainer";
+import { Container } from "@components/EntityContainer";
 import { EditDeleteButton } from "@components/IconButton";
 import styles from "./HazardsContainer.module.css";
 
@@ -7,7 +7,7 @@ interface HazardsContainerProps {
 }
 function HazardsContainer({ hazards }: HazardsContainerProps) {
 	return (
-		<EntityContainer title="Hazards">
+		<Container title="Hazards">
 			<div className={styles.hazardsContainer}>
 				{hazards.map(hazard => (
 					<div className={styles.hazard} key={hazard.id}>
@@ -16,7 +16,7 @@ function HazardsContainer({ hazards }: HazardsContainerProps) {
 					</div>
 				))}
 			</div>
-		</EntityContainer>
+		</Container>
 	);
 }
 

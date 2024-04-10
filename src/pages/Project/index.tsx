@@ -1,6 +1,10 @@
 import { controllers, hazards } from "@/json";
 import Button from "@components/Button";
-import { ControllersContainer, HazardsContainer, ProjectContainer } from "@components/Container";
+import {
+	ControllersContainer,
+	HazardsContainer,
+	ProjectContainer
+} from "@components/EntityContainer";
 
 function Project() {
 	return (
