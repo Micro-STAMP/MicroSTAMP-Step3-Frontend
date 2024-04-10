@@ -15,18 +15,23 @@
 	}
 
 	.logo {
+		font-size: 2rem;
+		font-weight: 600;
+
 		a {
 			color: var(--color-yellow);
 		}
-		font-size: 2.4rem;
-		font-weight: bold;
 	}
 
 	.links {
 		display: flex;
 		align-items: center;
-		gap: 18px;
-		font-size: 1.8rem;
-		font-weight: 300;
+		ul {
+			display: flex;
+			align-items: center;
+			gap: 18px;
+			font-size: 1.6rem;
+			font-weight: 400;
+		}
 	}
 }
