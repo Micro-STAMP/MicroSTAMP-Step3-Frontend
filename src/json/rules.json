@@ -25,6 +25,6 @@
 			}
 		],
 		"hazard": "H1",
-		"types": ["Too late", "Out of order"]
+		"types": ["Too late", "Out of order", "Provided"]
 	}
 ]

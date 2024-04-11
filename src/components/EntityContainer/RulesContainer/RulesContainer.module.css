@@ -1,28 +1,30 @@
 .rule {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
+	gap: 12px;
 	font-size: 1.4rem;
 	font-weight: 300;
-	padding: 12px 0;
+	padding-bottom: 18px;
+	border-bottom: 2px solid var(--color-gray);
 
-	max-width: 100%;
-	overflow-x: auto;
+	&:last-child {
+		border-bottom: none;
+		padding-bottom: 0px;
+	}
 
 	.cell {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		gap: 12px;
-		flex-grow: 1;
-
-		border-left: 1px solid var(--color-gray);
+		gap: 8px;
+		padding: 8px 16px;
+		flex-wrap: wrap;
+		background-color: var(--color-gray25);
+		border-radius: 10px;
 
 		.name {
+			color: var(--color-yellow);
 			font-weight: 500;
-		}
-
-		&:first-child {
-			border-left: none;
 		}
 	}
 }

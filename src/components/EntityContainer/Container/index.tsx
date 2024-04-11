@@ -9,10 +9,10 @@ interface ContainerProps {
 function Container({ title, justTitle = false, children }: ContainerProps) {
 	return (
 		<div className={styles.container}>
-			<header>
+			<header className={styles.header}>
 				<span className={styles.title}>{title}</span>
 				{!justTitle && (
-					<button type="button">
+					<button type="button" className={styles.button}>
 						<PlusIcon className={styles.icon} />
 					</button>
 				)}

@@ -6,7 +6,7 @@
 	border-radius: 30px;
 	min-height: 140px;
 
-	header {
+	.header {
 		display: flex;
 		width: fit-content;
 		background-color: var(--color-gray);
@@ -24,7 +24,7 @@
 			font-weight: bold;
 		}
 
-		button {
+		.button {
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
