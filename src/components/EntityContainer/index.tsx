@@ -6,6 +6,7 @@ import ControllersContainer from "@components/EntityContainer/ControllersContain
 import HazardsContainer from "@components/EntityContainer/HazardsContainer";
 import ProjectContainer from "@components/EntityContainer/ProjectContainer";
 import ProjectsContainer from "@components/EntityContainer/ProjectsContainer";
+import RulesContainer from "@components/EntityContainer/RulesContainer";
 import VariablesContainer from "@components/EntityContainer/VariablesContainer";
 
 export {
@@ -16,5 +17,6 @@ export {
 	ListWrapper,
 	ProjectContainer,
 	ProjectsContainer,
+	RulesContainer,
 	VariablesContainer
 };
