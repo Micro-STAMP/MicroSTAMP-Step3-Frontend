@@ -5,8 +5,17 @@ import {
 	HazardsContainer,
 	ProjectContainer
 } from "@components/EntityContainer";
+import { CSSProperties } from "react";
 
 function Project() {
+	const buttonsDiv: CSSProperties = {
+		display: "flex",
+		justifyContent: "end",
+		gap: "8px",
+		flexWrap: "wrap",
+		width: "100%"
+	};
+
 	return (
 		<>
 			<ProjectContainer
@@ -15,8 +24,13 @@ function Project() {
 			/>
 			<ControllersContainer controllers={controllers} />
 			<HazardsContainer hazards={hazards} />
-			<Button>Export Project</Button>
-			<Button variant="secondary">Remove Project</Button>
+
+			<div style={buttonsDiv}>
+				<Button size="normal">Export Project</Button>
+				<Button variant="secondary" size="normal">
+					Remove Project
+				</Button>
+			</div>
 		</>
 	);
 }

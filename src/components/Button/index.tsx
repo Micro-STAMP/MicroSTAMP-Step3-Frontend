@@ -5,11 +5,18 @@ type ButtonVariant = "primary" | "secondary";
 interface ButtonProps {
 	children: ReactNode;
 	type?: "submit" | "reset" | "button" | undefined;
+	size?: "normal" | "small";
 	variant?: ButtonVariant;
 	onClick?: () => void;
 }
-function Button({ onClick, children, variant = "primary", type = "button" }: ButtonProps) {
-	const buttonVariant = `${styles.button} ${styles[variant]}`;
+function Button({
+	onClick,
+	children,
+	variant = "primary",
+	type = "button",
+	size = "small"
+}: ButtonProps) {
+	const buttonVariant = `${styles.button} ${styles[variant]} ${styles[size]}`;
 	return (
 		<>
 			<button type={type} className={buttonVariant} onClick={onClick}>

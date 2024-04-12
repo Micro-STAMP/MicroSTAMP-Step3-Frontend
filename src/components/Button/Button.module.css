@@ -1,16 +1,28 @@
 .button {
+	display: flex;
+	align-items: center;
+	gap: 6px;
 	border-radius: 60px;
 	font-weight: bold;
 	box-shadow: var(--shadow25);
-	padding: 12px 24px;
-	font-size: 1.6rem;
 }
 
-.primary {
+/* Color Variant */
+.button.primary {
 	background-color: var(--color-yellow);
 	color: var(--color-white);
 }
-.secondary {
+.button.secondary {
 	background-color: var(--color-dark);
 	color: var(--color-yellow);
+}
+
+/* Button Size */
+.button.small {
+	padding: 6.6px 16px;
+	font-size: 1.4rem;
+}
+.button.normal {
+	padding: 12px 24px;
+	font-size: 1.6rem;
 }
