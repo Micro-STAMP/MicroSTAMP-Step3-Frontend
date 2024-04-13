@@ -2,8 +2,8 @@
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	border-radius: 60px;
-	font-weight: bold;
+	border-radius: 20px;
+	font-weight: 600;
 	box-shadow: var(--shadow25);
 }
 
@@ -13,7 +13,7 @@
 	color: var(--color-white);
 }
 .button.secondary {
-	background-color: var(--color-dark);
+	background-color: var(--color-dark-gray);
 	color: var(--color-yellow);
 }
 

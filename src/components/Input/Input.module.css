@@ -1,7 +1,7 @@
 .label {
 	display: flex;
 	flex-direction: column;
-	gap: 6px;
+	gap: 4px;
 	width: 100%;
 
 	.name {
@@ -13,7 +13,7 @@
 	.input {
 		background-color: var(--color-dark);
 		color: var(--color-white);
-		padding: 12px;
+		padding: 1.2rem;
 		border-radius: 10px;
 		font-weight: 500;
 		caret-color: var(--color-yellow);

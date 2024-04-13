@@ -1,0 +1,31 @@
+.login_form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2.4rem;
+	padding: 2.4rem;
+	border-radius: 10px;
+	background-color: var(--color-gray);
+	box-shadow: var(--shadow25);
+	width: clamp(252px, 90%, 432px);
+
+	.title {
+		font-size: 2.4rem;
+		align-self: start;
+		font-weight: 700;
+		color: var(--color-yellow);
+		text-shadow: var(--shadow25);
+	}
+
+	.inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		width: 100%;
+	}
+
+	.buttons {
+		display: flex;
+		gap: 1.2rem;
+	}
+}
