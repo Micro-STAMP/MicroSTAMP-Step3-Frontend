@@ -33,6 +33,10 @@
 	/* Default Styles */
 	--font: "Poppins", sans-serif;
 	--border3: 3px solid #d4a056;
+	--radius1: 10px;
+	--radius2: 20px;
+	--radius3: 30px;
+	--radius4: 60px;
 	--shadow25: 0 4px 4px #16161640;
 	--full-content-size: clamp(252px, 90%, 1440px);
 }

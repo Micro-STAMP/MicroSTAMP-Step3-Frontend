@@ -11,27 +11,23 @@ function TitleDisplay({ controller, project, controlAction }: TitleDisplayProps)
 		<header className={styles.display}>
 			<div className={styles.information}>
 				{controlAction?.length && (
-					<>
-						<div>
-							<strong>Control Action: </strong>
-							<span>{controlAction}</span>
-						</div>
-					</>
+					<div>
+						<strong>Control Action: </strong>
+						<span>{controlAction}</span>
+					</div>
 				)}
 				{project?.length && (
-					<>
-						<div>
-							<strong>Project: </strong>
-							<span>{project}</span>
-						</div>
-					</>
+					<div>
+						<strong>Project: </strong>
+						<span>{project}</span>
+					</div>
 				)}
 				<div>
 					<strong>Controller: </strong>
 					<span>{controller}</span>
 				</div>
 			</div>
-			<button type="button">
+			<button type="button" className={styles.button}>
 				<GoBackIcon className={styles.icon} />
 				Go Back
 			</button>

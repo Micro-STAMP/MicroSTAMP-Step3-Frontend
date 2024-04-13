@@ -6,6 +6,7 @@ import {
 	EditDeleteButton,
 	LinkButton
 } from "@components/IconButton";
+import { BiAdjust } from "react-icons/bi";
 
 function Home() {
 	return (
@@ -22,7 +23,9 @@ function Home() {
 			</>
 			<>
 				<Button>Export Project</Button>
-				<Button variant="secondary">Remove Project</Button>
+				<Button variant="secondary">
+					Remove Project <BiAdjust />
+				</Button>
 			</>
 		</>
 	);

@@ -1,7 +1,7 @@
 .label {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 0.4rem;
 	width: 100%;
 
 	.name {
@@ -12,12 +12,12 @@
 
 	.input {
 		background-color: var(--color-dark);
-		color: var(--color-white);
 		padding: 1.2rem;
-		border-radius: 10px;
-		font-weight: 500;
+		color: var(--color-white);
+		border-radius: var(--radius1);
 		caret-color: var(--color-yellow);
 		box-shadow: var(--shadow25);
+		font-weight: 500;
 
 		&:focus + .name {
 			color: var(--color-yellow);

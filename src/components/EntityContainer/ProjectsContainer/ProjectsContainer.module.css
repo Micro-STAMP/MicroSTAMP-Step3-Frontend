@@ -1,8 +1,14 @@
 .projectsContainer {
 	display: flex;
-	padding: 24px 0;
-	gap: 24px;
+	padding: 2.4rem 0;
+	gap: 2.4rem;
 
 	/* ! Até ter o slider */
 	flex-wrap: wrap;
+}
+
+@media (max-width: 743px) {
+	.projectsContainer {
+		justify-content: center;
+	}
 }

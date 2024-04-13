@@ -7,6 +7,8 @@ function ControlAction() {
 		<>
 			<TitleDisplay controller="Insulin Pump" controlAction="Pump Insulin" />
 			<RulesContainer rules={rules} />
+
+			<h1> [ Context Table ] </h1>
 		</>
 	);
 }

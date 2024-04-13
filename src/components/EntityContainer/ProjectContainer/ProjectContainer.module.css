@@ -1,7 +1,7 @@
 .projectContainer {
 	display: flex;
 	flex-direction: column;
-	gap: 18px;
+	gap: 1.8rem;
 	font-size: 1.8rem;
 	font-weight: 300;
 
@@ -10,12 +10,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 12px;
+		gap: 1.2rem;
 
 		/* TODO: Perguntar sobre colocar ou não  */
 		/* background-color: var(--color-gray25);
-		padding: 8px 12px;
-		border-radius: 20px; */
+		padding: 0.8rem 1.2rem;
+		border-radius: var(--radius1); */
 
 		.text {
 			display: flex;

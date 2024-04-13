@@ -1,17 +1,17 @@
 .values {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
+	gap: 0.8rem;
 	font-size: 1.4rem;
 	font-weight: 300;
 
 	.value {
 		display: flex;
 		align-items: center;
-		gap: 2px;
+		gap: 0.2rem;
 		background-color: var(--color-dark);
-		padding: 4px 8px;
-		border-radius: 8px;
+		padding: 0.4rem 0.8rem;
+		border-radius: 0.8rem;
 
 		button {
 			display: flex;
