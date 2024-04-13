@@ -5,6 +5,7 @@ import Layout from "@pages/Layout";
 import Login from "@pages/Login";
 import Project from "@pages/Project";
 import Projects from "@pages/Projects";
+import UCAs from "@pages/UCAs";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function AppRoutes() {
@@ -18,6 +19,7 @@ function AppRoutes() {
 					<Route path="project/:id" element={<Project />} />
 					<Route path="controller/:id" element={<Controller />} />
 					<Route path="control-action/:id" element={<ControlAction />} />
+					<Route path="project/:id/unsafe-control-actions" element={<UCAs />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -6,6 +6,7 @@ import {
 	ProjectContainer
 } from "@components/EntityContainer";
 import { CSSProperties } from "react";
+import { Link } from "react-router-dom";
 
 function Project() {
 	const buttonsDiv: CSSProperties = {
@@ -26,6 +27,9 @@ function Project() {
 			<HazardsContainer hazards={hazards} />
 
 			<div style={buttonsDiv}>
+				<Link to={`/project/insulin-pump/unsafe-control-actions`}>
+					<Button size="normal">See Unsafe Control Actions</Button>
+				</Link>
 				<Button size="normal">Export Project</Button>
 				<Button variant="secondary" size="normal">
 					Remove Project

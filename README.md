@@ -2,4 +2,4 @@
 
 ## TODO
 
--   classes sem camel case
+-   página de UCAs e constraints
