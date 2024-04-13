@@ -11,7 +11,7 @@ interface ProjectContainerProps {
 function ProjectContainer({ name, description }: ProjectContainerProps) {
 	return (
 		<Container title="Project" justTitle>
-			<div className={styles.projectContainer}>
+			<div className={styles.project_container}>
 				<div className={styles.name}>
 					<div className={styles.text}>
 						<strong>Name: </strong>

@@ -6,7 +6,7 @@ interface EditButtonProps {
 }
 function EditButton({ onClick }: EditButtonProps) {
 	return (
-		<button className={styles.editButton} onClick={onClick} type="button">
+		<button type="button" className={styles.edit_button} onClick={onClick}>
 			<EditIcon />
 		</button>
 	);

@@ -1,6 +1,7 @@
-.editButton,
-.deleteButton,
-.addButton {
+.edit_button,
+.delete_button,
+.add_button,
+.link_button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -11,19 +12,19 @@
 	border-radius: 50%;
 }
 
-.editDeleteButtonsContainer {
+.edit_delete_container {
 	display: flex;
 	background-color: var(--color-yellow);
 	box-shadow: var(--shadow25);
 	border-radius: var(--radius3);
 
-	.editButton {
+	.edit_button {
 		padding-left: 1.2rem;
 		padding-right: 0.6rem;
 		border-top-left-radius: var(--radius3);
 		border-bottom-left-radius: var(--radius3);
 	}
-	.deleteButton {
+	.delete_button {
 		padding-right: 1.2rem;
 		padding-left: 0.6rem;
 		border-top-right-radius: var(--radius3);

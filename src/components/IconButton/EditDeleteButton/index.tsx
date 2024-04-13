@@ -8,7 +8,7 @@ interface EditDeleteButtonProps {
 }
 function EditDeleteButton({ onEdit, onDelete }: EditDeleteButtonProps) {
 	return (
-		<div className={styles.editDeleteButtonsContainer}>
+		<div className={styles.edit_delete_container}>
 			<EditButton onClick={onEdit} />
 			<DeleteButton onClick={onDelete} />
 		</div>

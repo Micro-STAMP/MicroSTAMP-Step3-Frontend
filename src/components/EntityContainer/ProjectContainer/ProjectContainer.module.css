@@ -1,4 +1,4 @@
-.projectContainer {
+.project_container {
 	display: flex;
 	flex-direction: column;
 	gap: 1.8rem;

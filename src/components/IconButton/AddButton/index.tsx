@@ -6,7 +6,7 @@ interface AddButtonProps {
 }
 function AddButton({ onClick }: AddButtonProps) {
 	return (
-		<button className={styles.addButton} onClick={onClick} type="button">
+		<button type="button" className={styles.add_button} onClick={onClick}>
 			<AddIcon />
 		</button>
 	);

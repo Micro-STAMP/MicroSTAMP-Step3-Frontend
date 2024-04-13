@@ -8,7 +8,7 @@ interface LinkButtonProps {
 function LinkButton({ to }: LinkButtonProps) {
 	return (
 		<Link to={to}>
-			<button className={styles.editButton} type="button">
+			<button type="button" className={styles.link_button}>
 				<LinkIcon />
 			</button>
 		</Link>

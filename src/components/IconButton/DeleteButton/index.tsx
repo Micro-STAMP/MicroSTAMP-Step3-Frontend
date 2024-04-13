@@ -6,7 +6,7 @@ interface DeleteButtonProps {
 }
 function DeleteButton({ onClick }: DeleteButtonProps) {
 	return (
-		<button className={styles.deleteButton} onClick={onClick} type="button">
+		<button type="button" className={styles.delete_button} onClick={onClick}>
 			<DeleteIcon />
 		</button>
 	);

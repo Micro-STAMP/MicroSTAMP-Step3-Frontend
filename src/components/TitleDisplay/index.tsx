@@ -8,7 +8,7 @@ interface TitleDisplayProps {
 }
 function TitleDisplay({ controller, project, controlAction }: TitleDisplayProps) {
 	return (
-		<header className={styles.display}>
+		<header className={styles.title_display}>
 			<div className={styles.information}>
 				{controlAction?.length && (
 					<div>

@@ -6,7 +6,7 @@ interface ItemRootProps {
 function ItemRoot({ children }: ItemRootProps) {
 	return (
 		<>
-			<div className={styles.entityItem}>{children}</div>
+			<div className={styles.entity_item}>{children}</div>
 		</>
 	);
 }

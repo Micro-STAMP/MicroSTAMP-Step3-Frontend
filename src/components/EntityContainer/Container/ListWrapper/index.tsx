@@ -6,7 +6,7 @@ interface ListWrapperProps {
 function ListWrapper({ children }: ListWrapperProps) {
 	return (
 		<>
-			<div className={styles.listWrapper}>{children}</div>
+			<div className={styles.list_wrapper}>{children}</div>
 		</>
 	);
 }

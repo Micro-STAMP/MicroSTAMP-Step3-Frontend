@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 function ProjectCard({ slug, name, description }: ProjectCardProps) {
 	return (
-		<div className={styles.card}>
+		<div className={styles.project_card}>
 			<Link to={`/project/${slug}`}>
 				<div className={styles.name}>{name}</div>
 				<div className={styles.image}>
