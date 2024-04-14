@@ -4,7 +4,7 @@
 	width: 100%;
 	border: var(--border3);
 	border-radius: var(--radius2) var(--radius2) var(--radius1) var(--radius1);
-	height: 300px;
+	min-height: 110px;
 
 	.header {
 		display: flex;
@@ -22,5 +22,11 @@
 			font-weight: 600;
 			text-shadow: var(--shadow25);
 		}
+	}
+
+	.content {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 	}
 }

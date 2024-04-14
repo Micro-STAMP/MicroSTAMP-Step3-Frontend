@@ -1,0 +1,22 @@
+[
+	{
+		"id": "1",
+		"name": "Insulin pump provided pump insulin when glucose level is below.",
+		"constraint": "Insulin pump must not provide pump insulin when glucose level is below.",
+		"hazard": "H1",
+		"rule": "R1"
+	},
+	{
+		"id": "2",
+		"name": "Insulin pump provided pump insulin too early when glucose level is below.",
+		"constraint": "Insulin pump must not provide pump insulin too early when glucose level is below.",
+		"hazard": "H1",
+		"rule": "R2"
+	},
+	{
+		"id": "3",
+		"name": "Insulin pump provided pump insulin too late when glucose level is below.",
+		"constraint": "Insulin pump must not provide pump insulin too late when glucose level is below.",
+		"hazard": "H2"
+	}
+]
