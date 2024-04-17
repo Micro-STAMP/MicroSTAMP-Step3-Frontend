@@ -5,10 +5,11 @@ import styles from "./ProjectsContainer.module.css";
 
 interface ProjectsContainerProps {
 	projects: IProject[];
+	onClickCreateProject: () => void;
 }
-function ProjectsContainer({ projects }: ProjectsContainerProps) {
+function ProjectsContainer({ projects, onClickCreateProject }: ProjectsContainerProps) {
 	return (
-		<Container title="Projects">
+		<Container title="Projects" onClick={onClickCreateProject}>
 			<div className={styles.projects_container}>
 				{projects.map(project => (
 					<ProjectCard key={project.id} {...project} />
