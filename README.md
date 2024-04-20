@@ -2,4 +2,4 @@
 
 ## TODO
 
--   Modal de criar variáveis, valores e regras
+-   Modal de criar regras

@@ -9,9 +9,9 @@ interface ControlActionsContainerProps {
 	controlActions: IControlAction[];
 }
 function ControlActionsContainer({ controlActions }: ControlActionsContainerProps) {
-	const [modalCreateControlActionOpen, setmodalCreateControlActionOpen] = useState(false);
+	const [modalCreateControlActionOpen, setModalCreateControlActionOpen] = useState(false);
 	const toggleModal = () => {
-		setmodalCreateControlActionOpen(!modalCreateControlActionOpen);
+		setModalCreateControlActionOpen(!modalCreateControlActionOpen);
 	};
 	return (
 		<>

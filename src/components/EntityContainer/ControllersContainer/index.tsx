@@ -9,9 +9,9 @@ interface ControllersContainerProps {
 	controllers: IController[];
 }
 function ControllersContainer({ controllers }: ControllersContainerProps) {
-	const [modalCreateControllerOpen, setmodalCreateControllerOpen] = useState(false);
+	const [modalCreateControllerOpen, setModalCreateControllerOpen] = useState(false);
 	const toggleModal = () => {
-		setmodalCreateControllerOpen(!modalCreateControllerOpen);
+		setModalCreateControllerOpen(!modalCreateControllerOpen);
 	};
 	return (
 		<>

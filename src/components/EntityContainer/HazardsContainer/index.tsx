@@ -9,9 +9,9 @@ interface HazardsContainerProps {
 	hazards: IHazard[];
 }
 function HazardsContainer({ hazards }: HazardsContainerProps) {
-	const [modalCreateHazardOpen, setmodalCreateHazardOpen] = useState(false);
+	const [modalCreateHazardOpen, setModalCreateHazardOpen] = useState(false);
 	const toggleModal = () => {
-		setmodalCreateHazardOpen(!modalCreateHazardOpen);
+		setModalCreateHazardOpen(!modalCreateHazardOpen);
 	};
 	return (
 		<>

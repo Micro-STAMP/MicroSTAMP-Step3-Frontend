@@ -9,9 +9,9 @@ interface ProjectsContainerProps {
 	projects: IProject[];
 }
 function ProjectsContainer({ projects }: ProjectsContainerProps) {
-	const [modalCreateProjectOpen, setmodalCreateProjectOpen] = useState(false);
+	const [modalCreateProjectOpen, setModalCreateProjectOpen] = useState(false);
 	const toggleModal = () => {
-		setmodalCreateProjectOpen(!modalCreateProjectOpen);
+		setModalCreateProjectOpen(!modalCreateProjectOpen);
 	};
 	return (
 		<>

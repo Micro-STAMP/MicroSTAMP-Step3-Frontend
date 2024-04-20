@@ -2,6 +2,8 @@ import ModalCreateControlAction from "@components/Modal/ModalCreateControlAction
 import ModalCreateController from "@components/Modal/ModalCreateController";
 import ModalCreateHazard from "@components/Modal/ModalCreateHazard";
 import ModalCreateProject from "@components/Modal/ModalCreateProject";
+import ModalCreateValue from "@components/Modal/ModalCreateValue";
+import ModalCreateVariable from "@components/Modal/ModalCreateVariable";
 import { ModalCreateEntity } from "@components/Modal/Templates/ModalCreateEntity";
 
 export interface ModalProps {
@@ -14,5 +16,7 @@ export {
 	ModalCreateController,
 	ModalCreateEntity,
 	ModalCreateHazard,
-	ModalCreateProject
+	ModalCreateProject,
+	ModalCreateValue,
+	ModalCreateVariable
 };
