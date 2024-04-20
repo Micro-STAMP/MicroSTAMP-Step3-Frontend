@@ -1,0 +1,26 @@
+.modal_create_entity {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2.8rem;
+	padding: 1.2rem;
+
+	.title {
+		font-size: 2.4rem;
+		align-self: start;
+		font-weight: 700;
+		color: var(--color-yellow);
+		text-shadow: var(--shadow25);
+	}
+	.inputs {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		width: 100%;
+	}
+	.buttons {
+		display: flex;
+		gap: 1.2rem;
+	}
+}

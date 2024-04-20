@@ -8,15 +8,15 @@ import {
 import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 
-function Project() {
-	const buttonsDiv: CSSProperties = {
-		display: "flex",
-		justifyContent: "end",
-		gap: "8px",
-		flexWrap: "wrap",
-		width: "100%"
-	};
+const buttonsDiv: CSSProperties = {
+	display: "flex",
+	justifyContent: "end",
+	gap: "8px",
+	flexWrap: "wrap",
+	width: "100%"
+};
 
+function Project() {
 	return (
 		<>
 			<ProjectContainer

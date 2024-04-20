@@ -8,12 +8,19 @@
 }
 
 .modal_container {
-	width: clamp(200px, 90%, 520px);
+	min-width: 200px;
+	width: 90%;
 	background-color: var(--color-gray);
 	border-radius: var(--radius2);
 	box-shadow: var(--shadow25);
+	padding: 2.4rem;
 	margin: 0 auto;
-	padding: 2.6rem;
 	border: none;
-	height: 300px;
+	z-index: 3;
+}
+.modal_container.normal {
+	max-width: 520px;
+}
+.modal_container.large {
+	max-width: 1024px;
 }

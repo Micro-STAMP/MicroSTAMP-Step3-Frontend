@@ -2,4 +2,4 @@
 
 ## TODO
 
--   página de UCAs e constraints
+-   Modal de criar variáveis, valores e regras
