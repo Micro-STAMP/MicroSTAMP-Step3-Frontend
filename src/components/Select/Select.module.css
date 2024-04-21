@@ -1,0 +1,20 @@
+.select_container {
+	.select {
+		padding: 3.6rem 1.8rem;
+		font-weight: 700;
+		font-size: 1.6rem;
+		border-radius: var(--radius1);
+		color: var(--color-white);
+		background-color: var(--color-dark);
+		appearance: none;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+	}
+	.option {
+		font-size: 1.6rem;
+		color: var(--color-yellow);
+		background-color: var(--color-dark);
+	}
+}

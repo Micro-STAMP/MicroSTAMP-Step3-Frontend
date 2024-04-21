@@ -1,12 +1,35 @@
-import Button from "@components/Button";
-import {
-	AddButton,
-	DeleteButton,
-	EditButton,
-	EditDeleteButton,
-	LinkButton
-} from "@components/IconButton";
-import { BiAdjust } from "react-icons/bi";
+import Select from "@components/Select";
+
+const types = [
+	{
+		option: "Provided",
+		value: "Provided"
+	},
+	{
+		option: "Not provided",
+		value: "Not provided"
+	},
+	{
+		option: "Too early",
+		value: "Too early"
+	},
+	{
+		option: "Too late",
+		value: "Too late"
+	},
+	{
+		option: "Out of order",
+		value: "Out of order"
+	},
+	{
+		option: "Stopped too soon",
+		value: "Stopped too soon"
+	},
+	{
+		option: "Applied too long",
+		value: "Applied too long"
+	}
+];
 
 function Home() {
 	return (
@@ -15,17 +38,7 @@ function Home() {
 
 			{/* Testes de componentes:  */}
 			<>
-				<EditButton onClick={() => {}} />
-				<DeleteButton onClick={() => {}} />
-				<AddButton onClick={() => {}} />
-				<LinkButton to="/" />
-				<EditDeleteButton onEdit={() => {}} onDelete={() => {}} />
-			</>
-			<>
-				<Button>Export Project</Button>
-				<Button variant="secondary">
-					Remove Project <BiAdjust />
-				</Button>
+				<Select options={types} />
 			</>
 		</>
 	);
