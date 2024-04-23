@@ -1,4 +1,5 @@
 import { IController } from "@/interfaces/IController";
+import { IHazard } from "@/interfaces/IHazard";
 import { IProject } from "@/interfaces/IProjects";
 import { IRule } from "@/interfaces/IRule";
 import { IUnsafeControlAction } from "@/interfaces/IUnsafeControlAction";
