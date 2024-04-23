@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BiChevronDown as ArrowDown, BiChevronUp as ArrowUp } from "react-icons/bi";
 
-import styles from "./Select.module.css";
+import styles from "./ValueSelect.module.css";
 
 interface SelectProps {
 	options: string[];
