@@ -4,3 +4,9 @@
 	gap: 1.2rem;
 	width: 100%;
 }
+.container_title {
+	font-size: 1.6rem;
+	color: var(--color-yellow);
+	font-weight: 600;
+	text-shadow: var(--shadow25);
+}

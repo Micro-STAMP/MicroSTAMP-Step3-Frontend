@@ -4,6 +4,7 @@ import { ModalProps } from "@components/Modal";
 import {
 	ModalCreateEntity as Modal,
 	ModalContainer,
+	TypesMultiSelect,
 	ValueSelect
 } from "@components/Modal/Templates";
 import { useState } from "react";
@@ -21,12 +22,20 @@ function ModalCreateRule({ open, onClose, variables }: ModalCreateRuleProps) {
 		}));
 	};
 
+	const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+	const handleSelectType = (types: string[]) => {
+		setSelectedTypes(types);
+	};
+
 	return (
 		<ModalContainer open={open} size="large">
 			<Modal.Root>
 				<Modal.Title title="New Rule" />
 				<Modal.Inputs>
-					<div className={styles.types_container}>Selecionar os tipos</div>
+					<span className={styles.container_title}>Types</span>
+					<TypesMultiSelect values={selectedTypes} onChange={handleSelectType} />
+
+					<span className={styles.container_title}>Context</span>
 					<div className={styles.variables_container}>
 						{variables.map(variable => (
 							<ValueSelect
@@ -37,6 +46,8 @@ function ModalCreateRule({ open, onClose, variables }: ModalCreateRuleProps) {
 							/>
 						))}
 					</div>
+
+					<span className={styles.container_title}>Hazard</span>
 					<div className={styles.hazard_container}>Selecionar o Hazard</div>
 				</Modal.Inputs>
 				<Modal.Buttons>

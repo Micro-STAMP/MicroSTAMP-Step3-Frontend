@@ -1,0 +1,82 @@
+.multi_select_container {
+	width: 100%;
+	position: relative;
+
+	.multi_select {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		gap: 0.6rem;
+		padding: 1.2rem;
+		font-size: 1.4rem;
+		background-color: var(--color-dark-gray);
+		border-radius: var(--radius1);
+		color: var(--color-white);
+
+		.label {
+			padding: 0.4rem 1rem;
+		}
+
+		.selected_values {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1.2rem;
+
+			.selected_value {
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+				padding: 0.4rem 1rem;
+				border-radius: 0.5rem;
+				font-weight: 300;
+				background-color: var(--color-dark);
+
+				.remove_button {
+					font-size: 1.6rem;
+					color: var(--color-yellow);
+					border-radius: 50%;
+
+					&:hover {
+						background-color: var(--color-yellow);
+						color: var(--color-dark);
+						transition: all 0.3s;
+					}
+				}
+			}
+		}
+
+		.icon {
+			font-size: 1.8rem;
+			min-width: 1.8rem;
+		}
+	}
+	.multi_select.open {
+		border-radius: var(--radius1) var(--radius1) 0 0;
+	}
+
+	.options {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		text-align: center;
+		background-color: var(--color-dark-gray);
+		font-size: 1.4rem;
+		padding-bottom: 0.8rem;
+		border-radius: 0 0 0 var(--radius1);
+		z-index: 3;
+
+		max-height: 180px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	.option {
+		padding: 0.6rem 1rem;
+		color: var(--color-yellow);
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--color-dark);
+		}
+	}
+}

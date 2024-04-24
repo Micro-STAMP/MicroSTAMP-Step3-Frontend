@@ -17,6 +17,13 @@
 	margin: 0 auto;
 	border: none;
 	z-index: 3;
+
+	max-height: 95vh;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 1rem;
+	}
 }
 .modal_container.normal {
 	max-width: 520px;
