@@ -1,4 +1,5 @@
 import { BiSolidLeftArrowCircle as GoBackIcon } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import styles from "./TitleDisplay.module.css";
 
 interface TitleDisplayProps {
@@ -7,6 +8,8 @@ interface TitleDisplayProps {
 	project?: string;
 }
 function TitleDisplay({ controller, project, controlAction }: TitleDisplayProps) {
+	const navigate = useNavigate();
+
 	return (
 		<header className={styles.title_display}>
 			<div className={styles.information}>
@@ -27,7 +30,7 @@ function TitleDisplay({ controller, project, controlAction }: TitleDisplayProps)
 					<span>{controller}</span>
 				</div>
 			</div>
-			<button type="button" className={styles.button}>
+			<button type="button" className={styles.button} onClick={() => navigate(-1)}>
 				<GoBackIcon className={styles.icon} />
 				Go Back
 			</button>

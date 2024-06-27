@@ -1,9 +1,9 @@
-import { IValue } from "@/interfaces/IValue";
+import { IControllerValueDto } from "@interfaces/IController/IReadController";
 import { BiX as X } from "react-icons/bi";
 import styles from "./ItemValues.module.css";
 
 interface ItemValuesProps {
-	values: IValue[];
+	values: IControllerValueDto[];
 }
 function ItemValues({ values }: ItemValuesProps) {
 	return (

@@ -1,23 +1,39 @@
-import { IUnsafeControlAction } from "@/interfaces/IUnsafeControlAction";
 import { DeleteButton, EditButton } from "@components/IconButton";
+import { getConstraintByUCA } from "@http/Constraint";
+import { IReadUCA } from "@interfaces/IUnsafeControlAction";
+import { useQuery } from "@tanstack/react-query";
 import styles from "./UCARow.module.css";
 
 interface UCARowProps {
-	uca: IUnsafeControlAction;
+	uca: IReadUCA;
 }
 function UCARow({ uca }: UCARowProps) {
-	const hasRule = uca.rule && uca.rule.length > 0;
+	const {
+		data: constraint,
+		isLoading,
+		isError
+	} = useQuery({
+		queryKey: ["uca-constraint", uca],
+		queryFn: () => getConstraintByUCA(uca.id)
+	});
+
+	if (isLoading) return <h1>Loading...</h1>;
+	if (isError || !constraint) return <h1>Error</h1>;
 	return (
 		<div className={styles.uca_row}>
 			<div className={styles.uca}>
 				<div>
-					{uca.name}{" "}
-					<span>{hasRule ? `[${uca.hazard}, ${uca.rule}]` : `[${uca.hazard}]`}</span>
+					{uca.name}
+					<span>
+						{uca.rule_tag
+							? `[${uca.hazard_tag}, ${uca.rule_tag}]`
+							: `[${uca.hazard_tag}]`}
+					</span>
 				</div>
-				{!hasRule && <DeleteButton onClick={() => {}} />}
+				{!uca.rule_tag && <DeleteButton onClick={() => {}} />}
 			</div>
 			<div className={styles.constraint}>
-				<div>{uca.constraint}</div>
+				<div>{constraint.name}</div>
 				<EditButton onClick={() => {}} />
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+import HazardSelect from "./HazardSelect";
 import ModalContainer from "./ModalContainer";
 import Overlay from "./Overlay";
 import TypesMultiSelect from "./TypesMultiSelect";
@@ -5,4 +6,4 @@ import ValueSelect from "./ValueSelect";
 
 import { ModalCreateEntity } from "./ModalCreateEntity";
 
-export { ModalContainer, ModalCreateEntity, Overlay, TypesMultiSelect, ValueSelect };
+export { HazardSelect, ModalContainer, ModalCreateEntity, Overlay, TypesMultiSelect, ValueSelect };

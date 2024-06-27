@@ -1,12 +1,19 @@
-.variables_container {
+.rule_select_container {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 1.2rem;
-	width: 100%;
-}
-.container_title {
-	font-size: 1.6rem;
-	color: var(--color-yellow);
-	font-weight: 600;
-	text-shadow: var(--shadow25);
+	flex-direction: column;
+	gap: 0.6rem;
+
+	.container_title {
+		font-size: 1.4rem;
+		color: var(--color-yellow);
+		font-weight: 600;
+		text-shadow: var(--shadow25);
+	}
+
+	.variables_container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.2rem;
+		width: 100%;
+	}
 }

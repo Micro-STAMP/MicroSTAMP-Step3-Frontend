@@ -60,23 +60,27 @@
 		top: 100%;
 		width: 100%;
 		text-align: center;
-		background-color: var(--color-dark-gray);
-		font-size: 1.4rem;
-		padding-bottom: 0.8rem;
+		background-color: var(--color-dark);
+		font-size: 1.3rem;
+		padding: 0.4rem 0;
 		border-radius: 0 0 0 var(--radius1);
 		z-index: 3;
 
-		max-height: 180px;
+		max-height: 200px;
 		overflow-y: auto;
 		overflow-x: hidden;
 	}
 	.option {
 		padding: 0.6rem 1rem;
 		color: var(--color-yellow);
+		border-bottom: 1px solid var(--color-gray);
 		cursor: pointer;
 
+		&:last-child {
+			border-bottom: 0px;
+		}
 		&:hover {
-			background-color: var(--color-dark);
+			background-color: var(--color-dark-gray);
 		}
 	}
 }

@@ -1,14 +1,17 @@
-import { IVariable } from "@/interfaces/IVariable";
 import { Container, ListWrapper } from "@components/EntityContainer";
 import { EntityItem as Variable } from "@components/EntityItem";
 import { AddButton, EditDeleteButton } from "@components/IconButton";
 import { ModalCreateValue, ModalCreateVariable } from "@components/Modal";
+import { IControllerVariableDto } from "@interfaces/IController/IReadController";
 import { useState } from "react";
 
 interface VariableContainerProps {
-	variables: IVariable[];
+	variables: IControllerVariableDto[];
+	controllerId: number;
 }
-function VariableContainer({ variables }: VariableContainerProps) {
+function VariableContainer({ variables, controllerId }: VariableContainerProps) {
+	const [variableId, setVariableId] = useState(0);
+
 	const [modalCreateVariableOpen, setModalCreateVariableOpen] = useState(false);
 	const toggleModalVariable = () => {
 		setModalCreateVariableOpen(!modalCreateVariableOpen);
@@ -18,6 +21,7 @@ function VariableContainer({ variables }: VariableContainerProps) {
 	const toggleModalValue = () => {
 		setModalCreateValueOpen(!modalCreateValueOpen);
 	};
+
 	return (
 		<>
 			<Container title="Variables" onClick={toggleModalVariable}>
@@ -29,15 +33,28 @@ function VariableContainer({ variables }: VariableContainerProps) {
 								<Variable.Values values={variable.values} />
 							</Variable.Display>
 							<Variable.Actions>
-								<AddButton onClick={toggleModalValue} />
+								<AddButton
+									onClick={() => {
+										toggleModalValue();
+										setVariableId(variable.id);
+									}}
+								/>
 								<EditDeleteButton onEdit={() => {}} onDelete={() => {}} />
 							</Variable.Actions>
 						</Variable.Root>
 					))}
 				</ListWrapper>
 			</Container>
-			<ModalCreateVariable open={modalCreateVariableOpen} onClose={toggleModalVariable} />
-			<ModalCreateValue open={modalCreateValueOpen} onClose={toggleModalValue} />
+			<ModalCreateVariable
+				open={modalCreateVariableOpen}
+				onClose={toggleModalVariable}
+				controller_id={controllerId}
+			/>
+			<ModalCreateValue
+				open={modalCreateValueOpen}
+				onClose={toggleModalValue}
+				variable_id={variableId}
+			/>
 		</>
 	);
 }

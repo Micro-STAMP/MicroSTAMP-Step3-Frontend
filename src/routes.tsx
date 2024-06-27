@@ -19,7 +19,7 @@ function AppRoutes() {
 					<Route path="project/:id" element={<Project />} />
 					<Route path="controller/:id" element={<Controller />} />
 					<Route path="control-action/:id" element={<ControlAction />} />
-					<Route path="project/:id/unsafe-control-actions" element={<UCAs />} />
+					<Route path="controller/:id/uca" element={<UCAs />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

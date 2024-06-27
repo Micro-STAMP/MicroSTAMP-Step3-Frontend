@@ -1,14 +1,15 @@
-import { IHazard } from "@/interfaces/IHazard";
 import { Container, ListWrapper } from "@components/EntityContainer";
 import { EntityItem as Hazard } from "@components/EntityItem";
 import { EditDeleteButton } from "@components/IconButton";
 import { ModalCreateHazard } from "@components/Modal";
+import { IReadHazard } from "@interfaces/IHazard";
 import { useState } from "react";
 
 interface HazardsContainerProps {
-	hazards: IHazard[];
+	hazards: IReadHazard[];
+	project_id: number;
 }
-function HazardsContainer({ hazards }: HazardsContainerProps) {
+function HazardsContainer({ hazards, project_id }: HazardsContainerProps) {
 	const [modalCreateHazardOpen, setModalCreateHazardOpen] = useState(false);
 	const toggleModal = () => {
 		setModalCreateHazardOpen(!modalCreateHazardOpen);
@@ -25,7 +26,11 @@ function HazardsContainer({ hazards }: HazardsContainerProps) {
 					))}
 				</ListWrapper>
 			</Container>
-			<ModalCreateHazard open={modalCreateHazardOpen} onClose={toggleModal} />
+			<ModalCreateHazard
+				open={modalCreateHazardOpen}
+				onClose={toggleModal}
+				project_id={project_id}
+			/>
 		</>
 	);
 }

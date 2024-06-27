@@ -8,19 +8,21 @@ interface ButtonProps {
 	size?: "normal" | "small";
 	variant?: ButtonVariant;
 	onClick?: () => void;
+	isLoading?: boolean;
 }
 function Button({
 	onClick,
 	children,
 	variant = "primary",
 	type = "button",
-	size = "small"
+	size = "small",
+	isLoading = false
 }: ButtonProps) {
 	const buttonVariant = `${styles.button} ${styles[variant]} ${styles[size]}`;
 	return (
 		<>
-			<button type={type} className={buttonVariant} onClick={onClick}>
-				{children}
+			<button type={type} className={buttonVariant} onClick={onClick} disabled={isLoading}>
+				{!isLoading ? children : "Loading..."}
 			</button>
 		</>
 	);

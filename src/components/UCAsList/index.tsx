@@ -1,11 +1,23 @@
-import { IUnsafeControlAction } from "@/interfaces/IUnsafeControlAction";
+import { getUCAsByController } from "@http/UnsafeControlAction";
+import { useQuery } from "@tanstack/react-query";
 import UCARow from "./UCARow";
 import styles from "./UCAsList.module.css";
 
 interface UCAsListProps {
-	ucas: IUnsafeControlAction[];
+	controller_id: number;
 }
-function UCAsList({ ucas }: UCAsListProps) {
+function UCAsList({ controller_id }: UCAsListProps) {
+	const {
+		data: ucas,
+		isLoading,
+		isError
+	} = useQuery({
+		queryKey: ["unsafe-control-actions", controller_id],
+		queryFn: () => getUCAsByController(controller_id)
+	});
+
+	if (isLoading) return <h1>Loading...</h1>;
+	if (isError || !ucas) return <h1>Error</h1>;
 	return (
 		<div className={styles.ucas_list}>
 			<header className={styles.header}>

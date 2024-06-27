@@ -1,0 +1,15 @@
+.hazard_select {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-grow: 1;
+	background-color: var(--color-dark-gray);
+	border-radius: var(--radius1);
+
+	.label {
+		padding: 1.2rem;
+		font-size: 1.4rem;
+		color: var(--color-yellow);
+		font-weight: 500;
+	}
+}
