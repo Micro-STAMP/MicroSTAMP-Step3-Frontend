@@ -6,6 +6,7 @@ import { createHazard } from "@http/Hazard";
 import { ICreateHazard } from "@interfaces/IHazard";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { toast } from "sonner";
 
 interface ModalCreateHazardProps extends ModalProps {
 	project_id: number;
@@ -14,15 +15,19 @@ function ModalCreateHazard({ open, onClose, project_id }: ModalCreateHazardProps
 	const [name, setName] = useState("");
 
 	const queryClient = useQueryClient();
-	const { mutate: requestCreateHazard } = useMutation({
+	const { mutateAsync: requestCreateHazard, isPending } = useMutation({
 		mutationFn: (hazard: ICreateHazard) => createHazard(hazard),
 		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["hazards"] });
+			queryClient.invalidateQueries({ queryKey: ["project-hazards"] });
+		},
+		onError: err => {
+			toast.error(err.message);
 		}
 	});
-	const handleCreateHazard = () => {
+	const handleCreateHazard = async () => {
 		const hazard: ICreateHazard = { name, project_id };
-		requestCreateHazard(hazard);
+		await requestCreateHazard(hazard);
+		setName("");
 		onClose();
 	};
 
@@ -34,11 +39,11 @@ function ModalCreateHazard({ open, onClose, project_id }: ModalCreateHazardProps
 					<Input label="Name" onChange={setName} value={name} />
 				</Modal.Inputs>
 				<Modal.Buttons>
-					<Button size="normal" onClick={handleCreateHazard}>
-						Create
-					</Button>
 					<Button size="normal" variant="secondary" onClick={onClose}>
 						Cancel
+					</Button>
+					<Button size="normal" onClick={handleCreateHazard} isLoading={isPending}>
+						Create
 					</Button>
 				</Modal.Buttons>
 			</Modal.Root>

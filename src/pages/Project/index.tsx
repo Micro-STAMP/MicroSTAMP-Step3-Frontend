@@ -4,12 +4,14 @@ import {
 	HazardsContainer,
 	ProjectContainer
 } from "@components/EntityContainer";
+import { ModalConfirm } from "@components/Modal";
 import { getControllers } from "@http/Controller";
 import { getHazards } from "@http/Hazard";
-import { getProjectById } from "@http/Project";
-import { useQuery } from "@tanstack/react-query";
-import { CSSProperties } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { deleteProject, getProjectById } from "@http/Project";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { CSSProperties, useState } from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { toast } from "sonner";
 
 const buttonsDiv: CSSProperties = {
 	display: "flex",
@@ -23,6 +25,26 @@ function Project() {
 	const { id } = useParams();
 	if (!id) return <Navigate to="/projects" />;
 
+	const [modalDeleteProject, setModalDeleteProject] = useState(false);
+	const toggleModalDeleteProject = () => setModalDeleteProject(!modalDeleteProject);
+
+	const navigate = useNavigate();
+	const queryClient = useQueryClient();
+	const { mutateAsync: requestDeleteProject, isPending } = useMutation({
+		mutationFn: () => deleteProject(parseInt(id)),
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ["project", id] });
+			toast.success("Project deleted.");
+			navigate("/projects");
+		},
+		onError: err => {
+			toast.error(err.message);
+		}
+	});
+	const handleDeleteProject = async () => {
+		await requestDeleteProject();
+	};
+
 	const {
 		data: project,
 		isLoading: projectLoading,
@@ -31,22 +53,20 @@ function Project() {
 		queryKey: ["project", id],
 		queryFn: () => getProjectById(parseInt(id))
 	});
-
 	const {
 		data: hazards,
 		isLoading: hazardsLoading,
 		isError: hazardsError
 	} = useQuery({
-		queryKey: ["hazards", id],
+		queryKey: ["project-hazards", id],
 		queryFn: () => getHazards(parseInt(id))
 	});
-
 	const {
 		data: controllers,
 		isLoading: controllersLoading,
 		isError: controllersError
 	} = useQuery({
-		queryKey: ["controllers", id],
+		queryKey: ["project-controllers", id],
 		queryFn: () => getControllers(parseInt(id))
 	});
 
@@ -57,15 +77,29 @@ function Project() {
 	return (
 		<>
 			<ProjectContainer name={project.name} description={project.description} />
-			<ControllersContainer controllers={controllers} project_id={parseInt(id)} />
 			<HazardsContainer hazards={hazards} project_id={parseInt(id)} />
+			<ControllersContainer controllers={controllers} project_id={parseInt(id)} />
 
 			<div style={buttonsDiv}>
 				<Button size="normal">Export Project</Button>
-				<Button variant="secondary" size="normal">
+				<Button
+					variant="secondary"
+					size="normal"
+					isLoading={isPending}
+					onClick={toggleModalDeleteProject}
+				>
 					Remove Project
 				</Button>
 			</div>
+			<ModalConfirm
+				open={modalDeleteProject}
+				onClose={toggleModalDeleteProject}
+				label="Delete Project"
+				message="Are you sure you want to delete this project?"
+				onConfirm={handleDeleteProject}
+				btnText="Delete"
+				isLoading={isPending}
+			/>
 		</>
 	);
 }

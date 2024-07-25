@@ -1,7 +1,9 @@
 import { http } from "@http/AxiosConfig";
+import { IException } from "@interfaces/IException";
 import { ICreateRule } from "@interfaces/IRule/ICreateRule";
 import { IReadListRule } from "@interfaces/IRule/IReadListRule";
 import { IReadRule } from "@interfaces/IRule/IReadRule";
+import { AxiosError } from "axios";
 
 const RULE_ENDPOINT = "rule";
 const RULE_CA_ENDPOINT = (ca_id: number) => `${RULE_ENDPOINT}/control-action/${ca_id}`;
@@ -13,7 +15,8 @@ const createRule = async (rule: ICreateRule) => {
 		const res = await http.post(RULE_ENDPOINT, rule);
 		console.log(res.data);
 	} catch (err) {
-		throw new Error();
+		console.log(err);
+		throw new Error("Error creating Rule.");
 	}
 };
 
@@ -39,5 +42,19 @@ const getRuleById = async (id: number) => {
 };
 
 export { getRuleById, getRules };
+
+// DELETE -----------------------------------------
+
+const deleteRule = async (id: number) => {
+	try {
+		await http.delete(`${RULE_ENDPOINT}/${id}`);
+	} catch (err) {
+		const axiosError = (await err) as AxiosError<IException>;
+		console.log(axiosError);
+		throw new Error("Error deleting Rule.");
+	}
+};
+
+export { deleteRule };
 
 // ------------------------------------------------

@@ -69,7 +69,7 @@ function ModalCreateUCA({
 	};
 
 	const { data: hazards, isLoading } = useQuery({
-		queryKey: ["hazards", project_id],
+		queryKey: ["project-hazards", project_id],
 		queryFn: () => getHazards(project_id)
 	});
 
@@ -85,8 +85,8 @@ function ModalCreateUCA({
 			setSelectedValues({});
 			onClose();
 		},
-		onError: () => {
-			toast.error("Error creating UCA");
+		onError: err => {
+			toast.error(err.message);
 		}
 	});
 
@@ -143,11 +143,11 @@ function ModalCreateUCA({
 					</div>
 				</Modal.Inputs>
 				<Modal.Buttons>
-					<Button size="normal" onClick={handleCreateNewUCA} isLoading={isPending}>
-						Create
-					</Button>
 					<Button variant="secondary" size="normal" onClick={onClose}>
 						Cancel
+					</Button>
+					<Button size="normal" onClick={handleCreateNewUCA} isLoading={isPending}>
+						Create
 					</Button>
 				</Modal.Buttons>
 			</Modal.Root>

@@ -1,3 +1,5 @@
+import ModalConfirm from "@components/Modal/ModalConfirm";
+
 import ModalCreateControlAction from "@components/Modal/ModalCreateControlAction";
 import ModalCreateController from "@components/Modal/ModalCreateController";
 import ModalCreateHazard from "@components/Modal/ModalCreateHazard";
@@ -13,6 +15,7 @@ export interface ModalProps {
 }
 
 export {
+	ModalConfirm,
 	ModalCreateControlAction,
 	ModalCreateController,
 	ModalCreateEntity,

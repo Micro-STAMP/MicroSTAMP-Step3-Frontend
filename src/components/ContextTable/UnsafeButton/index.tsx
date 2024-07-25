@@ -14,6 +14,7 @@ interface UnsafeButtonProps {
 }
 function UnsafeButton({ type, context, ca_id, controller, ucas }: UnsafeButtonProps) {
 	const [unsafe, setUnsafe] = useState(false);
+	const [byRule, setByRule] = useState<string | null>(null);
 	const [modalCreateUCAOpen, setModalCreateUCAOpen] = useState(false);
 	const toggleModalCreateUCA = () => setModalCreateUCAOpen(!modalCreateUCAOpen);
 
@@ -32,10 +33,14 @@ function UnsafeButton({ type, context, ca_id, controller, ucas }: UnsafeButtonPr
 				const ucaValues = uca.values.map(v => v.id);
 				if (uca.type === typeValue && isContextIncluded(ucaValues, contextValues)) {
 					setUnsafe(true);
+					if (uca.rule !== "") {
+						setByRule(uca.rule);
+					}
 					return;
 				}
 			}
 			setUnsafe(false);
+			setByRule(null);
 		};
 		checkIfUnsafe();
 	}, [ucas, type, context]);
@@ -49,7 +54,15 @@ function UnsafeButton({ type, context, ca_id, controller, ucas }: UnsafeButtonPr
 				className={buttonClass}
 				disabled={unsafe}
 			>
-				{unsafe ? <span>Unsafe</span> : <span>Unsafe?</span>}
+				{unsafe ? (
+					!byRule ? (
+						<span>Unsafe</span>
+					) : (
+						<span>{byRule}</span>
+					)
+				) : (
+					<span>Unsafe?</span>
+				)}
 			</button>
 			{!unsafe && (
 				<ModalCreateUCA

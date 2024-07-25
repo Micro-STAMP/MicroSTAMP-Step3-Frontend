@@ -6,21 +6,27 @@ import { createProject } from "@http/Project";
 import { ICreateProject } from "@interfaces/IProject";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { toast } from "sonner";
 
 function ModalCreateProject({ open, onClose }: ModalProps) {
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
 
 	const queryClient = useQueryClient();
-	const { mutate: requestCreateProject } = useMutation({
+	const { mutateAsync: requestCreateProject, isPending } = useMutation({
 		mutationFn: (project: ICreateProject) => createProject(project),
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ["projects"] });
+		},
+		onError: err => {
+			toast.error(err.message);
 		}
 	});
-	const handleCreateProject = () => {
+	const handleCreateProject = async () => {
 		const project: ICreateProject = { name, description };
-		requestCreateProject(project);
+		await requestCreateProject(project);
+		setName("");
+		setDescription("");
 		onClose();
 	};
 
@@ -33,11 +39,11 @@ function ModalCreateProject({ open, onClose }: ModalProps) {
 					<Input label="Description" value={description} onChange={setDescription} />
 				</Modal.Inputs>
 				<Modal.Buttons>
-					<Button size="normal" onClick={handleCreateProject}>
-						Create
-					</Button>
 					<Button variant="secondary" size="normal" onClick={onClose}>
 						Cancel
+					</Button>
+					<Button size="normal" onClick={handleCreateProject} isLoading={isPending}>
+						Create
 					</Button>
 				</Modal.Buttons>
 			</Modal.Root>

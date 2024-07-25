@@ -6,6 +6,7 @@ import { createController } from "@http/Controller";
 import { ICreateController } from "@interfaces/IController";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { toast } from "sonner";
 
 interface ModalCreateControllerProps extends ModalProps {
 	project_id: number;
@@ -14,15 +15,19 @@ function ModalCreateController({ open, onClose, project_id }: ModalCreateControl
 	const [name, setName] = useState("");
 
 	const queryClient = useQueryClient();
-	const { mutate: requestCreateController } = useMutation({
+	const { mutateAsync: requestCreateController, isPending } = useMutation({
 		mutationFn: (controller: ICreateController) => createController(controller),
 		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["controllers"] });
+			queryClient.invalidateQueries({ queryKey: ["project-controllers"] });
+		},
+		onError: err => {
+			toast.error(err.message);
 		}
 	});
-	const handleCreateController = () => {
+	const handleCreateController = async () => {
 		const controller: ICreateController = { name, project_id };
-		requestCreateController(controller);
+		await requestCreateController(controller);
+		setName("");
 		onClose();
 	};
 	return (
@@ -33,11 +38,11 @@ function ModalCreateController({ open, onClose, project_id }: ModalCreateControl
 					<Input label="Name" value={name} onChange={setName} />
 				</Modal.Inputs>
 				<Modal.Buttons>
-					<Button size="normal" onClick={handleCreateController}>
-						Create
-					</Button>
 					<Button size="normal" variant="secondary" onClick={onClose}>
 						Cancel
+					</Button>
+					<Button size="normal" onClick={handleCreateController} isLoading={isPending}>
+						Create
 					</Button>
 				</Modal.Buttons>
 			</Modal.Root>

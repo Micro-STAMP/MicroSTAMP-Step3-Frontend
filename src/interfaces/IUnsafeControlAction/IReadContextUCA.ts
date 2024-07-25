@@ -9,6 +9,7 @@ interface IReadContextUCA {
 	ucaName: string;
 	values: IUCAValueDto[];
 	type: string;
+	rule: string;
 }
 
 export type { IReadContextUCA };

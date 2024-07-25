@@ -1,5 +1,7 @@
 import { http } from "@http/AxiosConfig";
 import { ICreateController, IReadController, IReadListController } from "@interfaces/IController";
+import { IException } from "@interfaces/IException";
+import { AxiosError } from "axios";
 
 const CONTROLLER_ENDPOINT = "controller";
 const CONTROLLER_PROJECT_ENDPOINT = (project_id: number) =>
@@ -13,6 +15,7 @@ const createController = async (controller: ICreateController) => {
 		console.log(res.data);
 	} catch (err) {
 		console.log(err);
+		throw new Error("Error creating Controller.");
 	}
 };
 
@@ -38,5 +41,19 @@ const getControllerById = async (id: number) => {
 };
 
 export { getControllerById, getControllers };
+
+// DELETE -----------------------------------------
+
+const deleteController = async (id: number) => {
+	try {
+		await http.delete(`${CONTROLLER_ENDPOINT}/${id}`);
+	} catch (err) {
+		const axiosError = (await err) as AxiosError<IException>;
+		console.log(axiosError);
+		throw new Error("Error deleting Controller.");
+	}
+};
+
+export { deleteController };
 
 // ------------------------------------------------

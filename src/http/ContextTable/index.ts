@@ -13,6 +13,7 @@ const createContextTable = async (controller_id: number) => {
 		return res.data;
 	} catch (err) {
 		console.log(err);
+		throw new Error("Error creating Context Table.");
 	}
 };
 

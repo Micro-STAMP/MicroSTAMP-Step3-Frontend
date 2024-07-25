@@ -1,5 +1,7 @@
 import { http } from "@http/AxiosConfig";
+import { IException } from "@interfaces/IException";
 import { ICreateVariable, IReadVariable, IVariableListItem } from "@interfaces/IVariable";
+import { AxiosError } from "axios";
 
 const VARIABLE_ENDPOINT = "variable";
 
@@ -11,6 +13,7 @@ const createVariable = async (ca: ICreateVariable) => {
 		console.log(res.data);
 	} catch (err) {
 		console.log(err);
+		throw new Error("Error creating Variable.");
 	}
 };
 
@@ -38,5 +41,19 @@ const getVariablesByController = async (controller_id: number) => {
 };
 
 export { getVariableById, getVariablesByController };
+
+// DELETE -----------------------------------------
+
+const deleteVariable = async (id: number) => {
+	try {
+		await http.delete(`${VARIABLE_ENDPOINT}/${id}`);
+	} catch (err) {
+		const axiosError = (await err) as AxiosError<IException>;
+		console.log(axiosError);
+		throw new Error("Error deleting Variable.");
+	}
+};
+
+export { deleteVariable };
 
 // ------------------------------------------------

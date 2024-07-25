@@ -50,7 +50,7 @@ function ModalCreateRule({ open, onClose, variables, project_id, ca_id }: ModalC
 	};
 
 	const { data: hazards, isLoading } = useQuery({
-		queryKey: ["hazards", project_id],
+		queryKey: ["project-hazards", project_id],
 		queryFn: () => getHazards(project_id)
 	});
 
@@ -60,8 +60,8 @@ function ModalCreateRule({ open, onClose, variables, project_id, ca_id }: ModalC
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ["rules"] });
 		},
-		onError: () => {
-			toast.error("Failed to create rule");
+		onError: err => {
+			toast.error(err.message);
 		}
 	});
 
@@ -125,11 +125,11 @@ function ModalCreateRule({ open, onClose, variables, project_id, ca_id }: ModalC
 					</div>
 				</Modal.Inputs>
 				<Modal.Buttons>
-					<Button size="normal" onClick={handleCreateNewRule} isLoading={isPending}>
-						Create
-					</Button>
 					<Button variant="secondary" size="normal" onClick={onClose}>
 						Cancel
+					</Button>
+					<Button size="normal" onClick={handleCreateNewRule} isLoading={isPending}>
+						Create
 					</Button>
 				</Modal.Buttons>
 			</Modal.Root>

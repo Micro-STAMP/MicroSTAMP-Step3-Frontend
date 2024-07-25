@@ -3,7 +3,7 @@ import { ControlActionsContainer, VariablesContainer } from "@components/EntityC
 import TitleDisplay from "@components/TitleDisplay";
 import { createContextTable } from "@http/ContextTable";
 import { getControllerById } from "@http/Controller";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { CSSProperties } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -20,10 +20,12 @@ function Controller() {
 	const { id } = useParams();
 	if (!id) return <Navigate to="/projects" />;
 
+	const queryClient = useQueryClient();
 	const { mutateAsync: requestCreateContextTable, isPending } = useMutation({
 		mutationFn: () => createContextTable(parseInt(id)),
 		onSuccess: () => {
 			toast.success("Context Table created successfully");
+			queryClient.invalidateQueries({ queryKey: ["controller"] });
 		},
 		onError: () => {
 			toast.error("Failed to create context table");
@@ -33,6 +35,8 @@ function Controller() {
 	const handleCreateContextTable = async () => {
 		await requestCreateContextTable();
 	};
+
+	const handleResetContextTable = async () => {};
 
 	const {
 		data: controller,
@@ -60,14 +64,20 @@ function Controller() {
 						See Unsafe Control Actions
 					</Button>
 				</Link>
-				<Button
-					variant="secondary"
-					size="normal"
-					onClick={handleCreateContextTable}
-					isLoading={isPending}
-				>
-					Create Context Table
-				</Button>
+				{!controller.context_table_id ? (
+					<Button
+						variant="secondary"
+						size="normal"
+						onClick={handleCreateContextTable}
+						isLoading={isPending}
+					>
+						Create Context Table
+					</Button>
+				) : (
+					<Button variant="secondary" size="normal" onClick={handleResetContextTable}>
+						Reset Context Table
+					</Button>
+				)}
 			</div>
 		</>
 	);

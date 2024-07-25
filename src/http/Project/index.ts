@@ -11,6 +11,7 @@ const createProject = async (project: ICreateProject) => {
 		console.log(res.data);
 	} catch (err) {
 		console.log(err);
+		throw new Error("Error creating Project.");
 	}
 };
 
@@ -36,5 +37,21 @@ const getProjectById = async (id: number) => {
 };
 
 export { getProjectById, getProjects };
+
+// UPDATE -----------------------------------------
+// TODO
+
+// DELETE -----------------------------------------
+
+const deleteProject = async (id: number) => {
+	try {
+		await http.delete(`${PROJECT_ENDPOINT}/${id}`);
+	} catch (err) {
+		console.log(err);
+		throw new Error("Error deleting Project.");
+	}
+};
+
+export { deleteProject };
 
 // ------------------------------------------------

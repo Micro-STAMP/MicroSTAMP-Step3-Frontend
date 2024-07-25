@@ -1,5 +1,7 @@
 import { http } from "@http/AxiosConfig";
 import { ICreateControlAction, IReadControlAction } from "@interfaces/IControlAction";
+import { IException } from "@interfaces/IException";
+import { AxiosError } from "axios";
 
 const CONTROL_ACTION_ENDPOINT = "control-action";
 
@@ -11,6 +13,7 @@ const createControlAction = async (ca: ICreateControlAction) => {
 		console.log(res.data);
 	} catch (err) {
 		console.log(err);
+		throw new Error("Error creating Control Action.");
 	}
 };
 
@@ -28,5 +31,19 @@ const getControlActionById = async (id: number) => {
 };
 
 export { getControlActionById };
+
+// DELETE -----------------------------------------
+
+const deleteControlAction = async (id: number) => {
+	try {
+		await http.delete(`${CONTROL_ACTION_ENDPOINT}/${id}`);
+	} catch (err) {
+		const axiosError = (await err) as AxiosError<IException>;
+		console.log(axiosError);
+		throw new Error("Error deleting Control Action.");
+	}
+};
+
+export { deleteControlAction };
 
 // ------------------------------------------------
